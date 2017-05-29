@@ -35,5 +35,13 @@ public class MainActivity extends AppCompatActivity {
     private void addDataSet(PieChart pie) {
         ArrayList<PieEntry> xAxis = new ArrayList<>();
         ArrayList<String> yAxis = new ArrayList<>();
+
+        for(int i = 0; i < yData.length; i++){
+            xAxis.add(new PieEntry(yData[i] , i));
+        }
+
+        for(int i = 0; i < xData.length; i++){
+            yAxis.add(xData[i]);
+        }
     }
 }
