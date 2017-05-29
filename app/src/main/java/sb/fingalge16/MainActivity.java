@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieEntry;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,5 +20,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         pieChart = (PieChart) findViewById(R.id.idPieChart);
 
+        pieChart.setRotationEnabled(true);
+        pieChart.setHoleRadius(25f);
+        pieChart.setTransparentCircleAlpha(0);
+        pieChart.setCenterText("Fingal GE");
+        pieChart.setCenterTextSize(10);
+
+        addDataSet(pieChart);
+
+
+
+    }
+
+    private void addDataSet(PieChart pie) {
+        ArrayList<PieEntry> xAxis = new ArrayList<>();
+        ArrayList<String> yAxis = new ArrayList<>();
     }
 }
