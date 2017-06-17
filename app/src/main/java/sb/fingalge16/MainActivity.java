@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 
 import java.util.ArrayList;
@@ -43,5 +44,7 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0; i < xData.length; i++){
             yAxis.add(xData[i]);
         }
+
+        PieDataSet pieDS = new PieDataSet(xAxis, "KSJ");
     }
 }
