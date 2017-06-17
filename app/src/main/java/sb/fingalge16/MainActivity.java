@@ -1,9 +1,11 @@
 package sb.fingalge16;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 
@@ -46,5 +48,21 @@ public class MainActivity extends AppCompatActivity {
         }
 
         PieDataSet pieDS = new PieDataSet(xAxis, "KSJ");
+        pieDS.setSliceSpace(5);
+        pieDS.setValueTextSize(10);
+
+        ArrayList<Integer> colour = new ArrayList<>();
+        colour.add(Color.GRAY);
+        colour.add(Color.CYAN);
+        colour.add(Color.RED);
+        colour.add(Color.YELLOW);
+        colour.add(Color.BLUE);
+        colour.add(Color.GREEN);
+
+        pieDS.setColors(colour);
+
+        Legend legend = pieChart.getLegend();
+
+
     }
 }
