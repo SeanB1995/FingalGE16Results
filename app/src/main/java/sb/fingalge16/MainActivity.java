@@ -6,8 +6,10 @@ import android.os.Bundle;
 
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
 import java.util.ArrayList;
 
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         pieChart.setCenterTextSize(10);
 
         addDataSet(pieChart);
+
+
 
 
 
@@ -62,6 +66,13 @@ public class MainActivity extends AppCompatActivity {
         pieDS.setColors(colour);
 
         Legend legend = pieChart.getLegend();
+        legend.setForm(Legend.LegendForm.CIRCLE);
+        legend.setPosition(Legend.LegendPosition.LEFT_OF_CHART);
+
+        PieData pieData = new PieData(pieDS);
+        pieChart.setData(pieData);
+        pieChart.invalidate();
+
 
 
     }
