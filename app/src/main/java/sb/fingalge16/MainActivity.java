@@ -3,6 +3,7 @@ package sb.fingalge16;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
@@ -38,6 +39,18 @@ public class MainActivity extends AppCompatActivity {
         pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
             public void onValueSelected(Entry e, Highlight h) {
+                int pos1 = e.toString().indexOf("sum");
+                String result = e.toString().substring(pos1 + 7);
+
+                for (int i = 0; i > yData.length; i++){
+                    if (yData[i] == Float.parseFloat(result)){
+                        pos1 = i;
+                        break;
+                    }
+                }
+                String contender = xData[pos1+1];
+                Toast.makeText(MainActivity.this, "contender" + contender + "\n" + "Percent" + result, Toast.LENGTH_SHORT).show();
+
 
             }
 
