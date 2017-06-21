@@ -3,6 +3,8 @@ package sb.fingalge16;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.PieChart;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private float[] yData = {25.3f, 12.3f};
     private String[] xData = {"Barry Martin", "a"};
     PieChart pieChart;
+    Button winner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+    winbut();
 
     }
 
@@ -101,4 +104,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public void winbut(){
+        winner = (Button)findViewById(R.id.button2);
+        winner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+    }
+
+
 }
